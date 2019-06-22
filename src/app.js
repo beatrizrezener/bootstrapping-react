@@ -5,8 +5,16 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import './style.scss';
 
 export default class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.onClick = this.onClick.bind(this);
+  }
+  onClick(e) {
+    console.log(this);
+  }
+
   render() {
-    return <ReactCSSTransitionGroup transitionName='app' transitionAppear={true} transitionAppearTimeout={500}><Jumbotron className="-fluid custom" 
+    return <ReactCSSTransitionGroup transitionName='app' transitionAppear={true} transitionAppearTimeout={500} transitionLeaveTimeout={0} transitionEnterTimeout={0}><Jumbotron className="-fluid custom" 
     containerFluid={true} >
       <h1>React.js Interfaces</h1>
       <p>with Bootstrap and SASS.</p>
@@ -14,7 +22,7 @@ export default class App extends React.Component {
         <Button className="-primary" href="http://linkedin.com/in/beatrizrezener" target="_blank" label="My Linkedin"/>
         <Button className="-danger -sm" label="My Profile" />
       </p>
-      <Button className="-primary -lg -block" >My Page</Button>
+      <Button onClick={this.onClick} className="-primary -lg -block" >My Page</Button>
   </Jumbotron></ReactCSSTransitionGroup>;
   }
 }

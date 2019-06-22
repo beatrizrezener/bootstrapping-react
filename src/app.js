@@ -11,10 +11,10 @@ export default class App extends React.Component {
       <h1>React.js Interfaces</h1>
       <p>with Bootstrap and SASS.</p>
       <p>
-        <Button className="-primary" href="http://linkedin.com/in/beatrizrezener" target="_blank"/>
-        <Button className="-danger -sm"/>
+        <Button className="-primary" href="http://linkedin.com/in/beatrizrezener" target="_blank" label="My Linkedin"/>
+        <Button className="-danger -sm" label="My Profile" />
       </p>
-      <Button className="-primary -lg -block" />
+      <Button className="-primary -lg -block" >My Page</Button>
   </Jumbotron></ReactCSSTransitionGroup>;
   }
 }

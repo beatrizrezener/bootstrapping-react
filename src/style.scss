@@ -12,18 +12,25 @@ $text-color: white;
 
 .app-appear{
   opacity: 0.01;
+  &-active{
+    opacity: 1;
+    transition: opacity 500ms ease-in;
+  }
 }
 
-.app-appear-active{
-  opacity: 1;
-  transition: opacity 500ms ease-in;
-}
-
-.app-enter{
+.app-enter {
   opacity: 0.01;
+
+  &.app-enter-active {
+    opacity: 1;
+    transition: opacity 5s ease-in;
+  }
 }
 
-.app-enter-active{
+.app-leave {
   opacity: 1;
-  transition: opacity 5s ease-in;
+  &-active {
+    opacity: 0;
+    transition: opacity 500ms ease-out;
+  }
 }

@@ -8,11 +8,16 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.onClick = this.onClick.bind(this);
+    this.onReset = this.onReset.bind(this);
     this.state = { click: 0, labels: [] };
   }
   onClick(e) {
     let labels = this.state.labels.concat([this.state.click]);
     this.setState({ click:this.state.click + 1, labels:labels })
+  }
+
+  onReset(e) {
+    this.setState({ click: 0, labels:[] })
   }
 
   render() {
@@ -26,7 +31,7 @@ export default class App extends React.Component {
       <p>with Bootstrap and SASS.</p>
       <p>
         <Button className="-primary" href="http://linkedin.com/in/beatrizrezener" target="_blank" label="My Linkedin"/>
-        <Button className="-danger -sm" label="My Profile" />
+        <Button onClick={this.onReset} className="-danger -sm" label="Reset" />
       </p>
       <Button onClick={this.onClick} className="-primary -lg -block" >{this.state.click}</Button>
       <ReactCSSTransitionGroup transitionName='app' transitionEnterTimeout={5000} transitionLeaveTimeout={500} >

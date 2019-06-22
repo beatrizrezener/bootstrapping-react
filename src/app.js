@@ -1,11 +1,12 @@
 import React from 'react';
 import Button from './bootstrap/button';
 import Jumbotron from './bootstrap/jumbotron';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import './style.scss';
 
 export default class App extends React.Component {
   render() {
-    return <Jumbotron className="-fluid custom" 
+    return <ReactCSSTransitionGroup transitionName='app' transitionAppear={true} transitionAppearTimeout={500}><Jumbotron className="-fluid custom" 
     containerFluid={true} >
       <h1>React.js Interfaces</h1>
       <p>with Bootstrap and SASS.</p>
@@ -13,7 +14,7 @@ export default class App extends React.Component {
         <Button className="-primary" href="http://linkedin.com/in/beatrizrezener" target="_blank"/>
         <Button className="-danger -sm"/>
       </p>
-      <Button className="-primary -lg -block" disabled />
-  </Jumbotron>;
+      <Button className="-primary -lg -block" />
+  </Jumbotron></ReactCSSTransitionGroup>;
   }
 }

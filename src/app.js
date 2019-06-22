@@ -8,9 +8,10 @@ export default class App extends React.Component {
       <h1>React.js Interfaces</h1>
       <p>with Bootstrap and SASS.</p>
       <p>
-        <Button className="btn btn-primary" href="http://linkedin.com/in/beatrizrezener" target="_blank"/>
-        <Button className="btn btn-danger" href="http://linkedin.com/in/beatrizrezener" target="_blank"/>
+        <Button className="-primary" href="http://linkedin.com/in/beatrizrezener" target="_blank"/>
+        <Button className="-danger -sm"/>
       </p>
+      <Button className="-primary -lg -block" />
     </div>
   </div>;
   }

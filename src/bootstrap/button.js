@@ -1,7 +1,15 @@
 import React from "react";
 
 export default class Button extends React.Component {
+  classify(key, value) {
+    if(value[0] === '-') value = key+value;
+    value = value.split(' -').join(` ${key}-`);
+    return `${key} ${value}`;
+  }
   render() {
-    return <a {...this.props} >My linkedin</a>;
+    const Tag = this.props.href ? 'a' : 'button';
+    const className = this.classify('btn', this.props.className);
+
+    return <Tag {...this.props} className={className} >My linkedin</Tag>;
   }
 }

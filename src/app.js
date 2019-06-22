@@ -8,15 +8,20 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.onClick = this.onClick.bind(this);
-    this.state = { click: 0 };
+    this.state = { click: 0, labels: [] };
   }
   onClick(e) {
-    this.setState({ click:this.state.click + 1 })
+    let labels = this.state.labels.concat([this.state.click]);
+    this.setState({ click:this.state.click + 1, labels:labels })
   }
 
   render() {
-    return <ReactCSSTransitionGroup transitionName='app' transitionAppear={true} transitionAppearTimeout={500} transitionLeaveTimeout={0} transitionEnterTimeout={0}><Jumbotron className="-fluid custom" 
-    containerFluid={true} >
+    let buttons = this.state.labels.map((value, i) => {
+      return <Button key={i}>{value}</Button>;
+    });
+
+    return <ReactCSSTransitionGroup transitionName='app' transitionAppear={true} transitionAppearTimeout={500} transitionEnterTimeout={500} transitionLeaveTimeout={500} >
+      <Jumbotron className="-fluid custom" containerFluid={true} >
       <h1>React.js Interfaces</h1>
       <p>with Bootstrap and SASS.</p>
       <p>
@@ -24,6 +29,9 @@ export default class App extends React.Component {
         <Button className="-danger -sm" label="My Profile" />
       </p>
       <Button onClick={this.onClick} className="-primary -lg -block" >{this.state.click}</Button>
+      <ReactCSSTransitionGroup transitionName='app' transitionEnterTimeout={5000} transitionLeaveTimeout={500} >
+        {buttons}
+      </ReactCSSTransitionGroup>
   </Jumbotron></ReactCSSTransitionGroup>;
   }
 }

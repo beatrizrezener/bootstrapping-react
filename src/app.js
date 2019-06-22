@@ -5,7 +5,7 @@ import './style.scss';
 
 export default class App extends React.Component {
   render() {
-    return <Jumbotron className="-fluid text-sm-center custom" 
+    return <Jumbotron className="-fluid custom" 
     containerFluid={true} >
       <h1>React.js Interfaces</h1>
       <p>with Bootstrap and SASS.</p>

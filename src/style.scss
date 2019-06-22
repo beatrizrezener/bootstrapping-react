@@ -1,7 +1,11 @@
+@mixin background-it($path) {
+  background-image: $path;
+  color: white;
+}
+
 $image: url(../assets/dog.jpg);
 $text-color: white;
 
 .custom {
-  background-image: $image;
-  color: $text-color;
+  @include background-it($image);
 }

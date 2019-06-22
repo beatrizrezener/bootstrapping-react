@@ -8,9 +8,10 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.onClick = this.onClick.bind(this);
+    this.state = { click: 0 };
   }
   onClick(e) {
-    console.log(this);
+    this.setState({ click:this.state.click + 1 })
   }
 
   render() {
@@ -22,7 +23,7 @@ export default class App extends React.Component {
         <Button className="-primary" href="http://linkedin.com/in/beatrizrezener" target="_blank" label="My Linkedin"/>
         <Button className="-danger -sm" label="My Profile" />
       </p>
-      <Button onClick={this.onClick} className="-primary -lg -block" >My Page</Button>
+      <Button onClick={this.onClick} className="-primary -lg -block" >{this.state.click}</Button>
   </Jumbotron></ReactCSSTransitionGroup>;
   }
 }

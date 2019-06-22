@@ -11,7 +11,7 @@ export default class App extends React.Component {
         <Button className="-primary" href="http://linkedin.com/in/beatrizrezener" target="_blank"/>
         <Button className="-danger -sm"/>
       </p>
-      <Button className="-primary -lg -block" />
+      <Button className="-primary -lg -block" disabled />
     </div>
   </div>;
   }
